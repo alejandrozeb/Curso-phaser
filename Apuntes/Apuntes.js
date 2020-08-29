@@ -22,4 +22,7 @@ el estado es cuando termine el juego estado 3
 update function
 time y delta son importantes por crean un loop infinito
 el delta se usa para que el movimientos ea el mismo en cualquier navegador
+
+//para cargar los assets las usamos en preload, ya creamos una scena
+
 */
