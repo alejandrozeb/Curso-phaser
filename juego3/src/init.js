@@ -14,7 +14,7 @@ var game = new Phaser.Game(config);
 function preload(){
     //console.log('soy preload');
     //cargando imagen en el cache de phaser que es global y que odemos usar en diferenes escenas
-    this.load.image("pajaro", "./assets/bird.png");
+    this.load.image("pajaro", "./assets/bird_dos.png");
 }
 function create(){
     //console.log('soy create')
@@ -30,8 +30,19 @@ function create(){
     //para rotar el pajaro
     //this.pajaro.setRotation(30);
     //en grados
-    this.pajaro.setAngle(30);
+    //this.pajaro.setAngle(30);
+    //para modificar el punto de rotacion
+    //this.pajaro.setOrigin(0.5,0.5); //por defecto al medio
+    //this.pajaro.setOrigin(0,0.5); //en x a la izquierda centrado
+    //this.pajaro.setOrigin(0,0); //en x a la izquierda superior
+    //this.pajaro.setOrigin(0,1); //en x a la izquierda inferior
+    //this.pajaro.setOrigin(1,1); //a la deracha y abajo
+    this.pajaro.setOrigin(1,0); //a la deracha y arriba
+    //de esta forma cambiamos el origen
+    //al moento de renderizar toma estos datos en cuenta
 }
 function update(time, delta){  //actualiza el estado cada vez y recibe dos parametros el time,delta
-    //console.log(delta); //muestra el delta y sus iteraciones
+    //para rotar el pajaro, el angulo se va aaumentando mienstras transcurre el loop
+    this.pajaro.angle++;
+    //el punto de rotacion de la imagen es el centro, para modificar el origen
 };
