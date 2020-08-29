@@ -25,4 +25,21 @@ el delta se usa para que el movimientos ea el mismo en cualquier navegador
 
 //para cargar los assets las usamos en preload, ya creamos una scena
 
+//movimiento se puede modificar su posicion en el eje x y y
+fisicas
+para añadir fisicas tnemos que agregar a la variable de configuracion
+
+physics:{
+        default: "arcade",  //tpo de fisica normal en juegos como mario
+        arcade: {
+            gravity:{
+                y:500       //añadimos gravedad en y
+            }
+        }
+    }
+
+//para darle estos atributos  al imagen cargada la usamos en create de la siguiente forma
+this.pajaro=this.physics.add.image(80,100,"pajaro");
+pero el pajaro cae infinitamente debemos agregar colisiones
+this.pajaro.setCollideWorldBounds(true);
 */
