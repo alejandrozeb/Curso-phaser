@@ -25,7 +25,7 @@ function preload(){
 function create(){
     this.pajaro = this.physics.add.image(100,50,"bird");   //el origen de refrencia donde se pocisiona el pajaro, comienza en la parte superior izquierda.
     //tecla en escucha
-    this.input.keyboard.on("keydown_RIGHT", () =>{
+   /*  this.input.keyboard.on("keydown_RIGHT", () =>{
         // al presionar el botn a la derecha
         this.pajaro.x++;    //aumentamos posiciones en x
     });
@@ -43,8 +43,18 @@ function create(){
         this.pajaro.setAcceleration(0,0);    //aumentamos posiciones en x
         //para que se dentega
         this.pajaro.setVelocity(0);
-    });
+    }); */
+    //con controles por default de phaser curosr predenterminada arriba bajo izq, der shit y espacio
+
+    this.cursor = this.input.keyboard.createCursorKeys();
+    console.log(this.cursor);
+
 }
 function update(time, delta){  
-
+    //agregando movimiento con el cursor
+    if(this.cursor.right.isDown){
+        this.pajaro.x++;
+    }else if(this.cursor.left.isDown){
+        this.pajaro.x--;
+    }
 };
