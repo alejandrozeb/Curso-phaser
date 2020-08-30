@@ -46,15 +46,25 @@ function create(){
     }); */
     //con controles por default de phaser curosr predenterminada arriba bajo izq, der shit y espacio
 
-    this.cursor = this.input.keyboard.createCursorKeys();
-    console.log(this.cursor);
+    /* this.cursor = this.input.keyboard.createCursorKeys();
+    console.log(this.cursor); */
 
+    //personalizando teclas
+    console.log(Phaser.Input.Keyboard.KeyCodes);
+    this.right = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
+    this.left = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
 }
 function update(time, delta){  
     //agregando movimiento con el cursor
-    if(this.cursor.right.isDown){
+    /* if(this.cursor.right.isDown){
         this.pajaro.x++;
     }else if(this.cursor.left.isDown){
+        this.pajaro.x--;
+    } */
+    //con teclas personalizadas
+    if(this.right.isDown){
+        this.pajaro.x++;
+    }else if(this.left.isDown){
         this.pajaro.x--;
     }
 };
