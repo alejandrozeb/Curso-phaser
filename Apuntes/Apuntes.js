@@ -42,4 +42,16 @@ physics:{
 this.pajaro=this.physics.add.image(80,100,"pajaro");
 pero el pajaro cae infinitamente debemos agregar colisiones
 this.pajaro.setCollideWorldBounds(true);
-*/
+////////////////////////////////////////////////////
+movimiento con controles 
+ this.input.keyboard.on("keydown_RIGHT", () =>{
+        // al presionar el botn a la derecha
+        this.pajaro.x++;    //aumentamos posiciones en x
+    });
+    tambien podemos usar estas funcion para las otras teclas y determinar que se hara
+ this.input.keyboard.on("keydown_D", () =>{
+        // al presionar el botn a la derecha
+        this.pajaro.x++;    //aumentamos posiciones en x
+    });
+solamente cambiando la cadena que enviamos a la funcion, y con un arrow function podemos dar a la teclas que necesitemos
+    */
