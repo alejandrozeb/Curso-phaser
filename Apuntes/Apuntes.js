@@ -65,7 +65,8 @@ verifica si esta activa  luego le dice si necesita actualizarse o no
 estos le dice a todos los complemetnos que se actualiza
 npm init -y 
 npm install --save phaser@3.8.0
-
+ scene:[SceneA,SceneB]
+ se va cargando por posicion en este caso la sceneB estara activa
 
 
     */

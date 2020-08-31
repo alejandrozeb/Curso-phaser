@@ -4,7 +4,7 @@ const config = {
     parent: "container",
     type: Phaser.CANVAS,
     backgroundColor: '#392542',
-    scene:[SceneA]
+    scene:[SceneA,SceneB,SceneC]
 }
 
 new Phaser.Game(config);
