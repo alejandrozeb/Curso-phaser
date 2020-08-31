@@ -54,4 +54,18 @@ movimiento con controles
         this.pajaro.x++;    //aumentamos posiciones en x
     });
 solamente cambiando la cadena que enviamos a la funcion, y con un arrow function podemos dar a la teclas que necesitemos
+
+
+****escenas****
+va cambiando escenas
+las escenas son contenedoras de si mismas una seccion de pausa, una seccion de menu
+gestiona el orden 
+y actualiza
+verifica si esta activa  luego le dice si necesita actualizarse o no
+estos le dice a todos los complemetnos que se actualiza
+npm init -y 
+npm install --save phaser@3.8.0
+
+
+
     */
