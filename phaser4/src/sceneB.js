@@ -1,6 +1,6 @@
 class SceneB extends Phaser.Scene {
     constructor(){
-        super({key: "ScenaB", active: true}); //nombre de referencia, ledecimos que la escena estara activa
+        super({key: "SceneB", active: true}); //nombre de referencia, ledecimos que la escena estara activa
     }
     preload(){
 

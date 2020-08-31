@@ -1,6 +1,6 @@
 class SceneC extends Phaser.Scene {
     constructor(){
-        super({key: "ScenaC", active: true}); //nombre de referencia, y que estara activa
+        super({key: "SceneC", active: true}); //nombre de referencia, y que estara activa
     }
     preload(){
 
