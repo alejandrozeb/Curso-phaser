@@ -5,6 +5,8 @@ class Palas extends Phaser.GameObjects.Sprite {
         scene.add.existing(this);
         //agregando fisica a las palas
         scene.physics.world.enable(this);
+        //especificar que este cuerpo es inamovible
+        this.body.immovable = true;
     }
 }
 

@@ -22,9 +22,14 @@ class Scene_play extends Phaser.Scene{
        //this.derecha = this.add.image(this.sys.game.config.width-30,center_height,"derecha");
        //con la clase pala
        this.derecha = new Palas(this,this.sys.game.config.width-30,center_height,"derecha");
+       //fisica del mundo que tenga rebote en los costados solo arriba y abajo
+       this.physics.world.setBoundsCollision(false,false,true,true);
        //bola
        this.ball = this.physics.add.image(center_width,center_height,"ball");
-
+        //añadiendo rebotes
+        this.ball.setCollideWorldBounds(true);
+        //rebota a la misma intencidad
+        this.ball.setBounce(1);
        //agreando velocidad a la bola
        this.ball.setVelocityX(-100);
 
@@ -36,7 +41,7 @@ class Scene_play extends Phaser.Scene{
     }
 
     chocaPala(){
-        
+
     }
 }
 export default Scene_play;
