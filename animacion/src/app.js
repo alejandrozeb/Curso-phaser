@@ -14,9 +14,12 @@ new Phaser.Game(config);
 function preload(){
     //cargo mi sprite shhet
     console.log('de');
+    //16 y 25 ya sta definido
     this.load.spritesheet('evil_tomato', 'assets/evil_tomato.png',{frameWidth: 16, frameHeight: 25});
 }
 function create(){
     console.log('h cre');
-    this.add.sprite(100,100,'evil_tomato',0);
+    //agregamos la imagen a la vista
+    this.tomato = this.add.sprite(100,100,'evil_tomato');
+    
 }
