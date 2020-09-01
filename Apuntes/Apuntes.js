@@ -68,5 +68,12 @@ npm install --save phaser@3.8.0
  scene:[SceneA,SceneB]
  se va cargando por posicion en este caso la sceneB estara activa
 
+//animacion
 
+sprite 
+es solo una imagen para crear una animacin creamos el Sprite sheet
+que pueden tener una animacion de caminata, quietp y abajo
+como entiende phaser esto
+por dentrose le indica de que punto a que punto es la animacion de caminar y la otra de estar quieto
+eso es un atlas
     */
