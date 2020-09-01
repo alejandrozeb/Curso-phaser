@@ -7,6 +7,8 @@ class Palas extends Phaser.GameObjects.Sprite {
         scene.physics.world.enable(this);
         //especificar que este cuerpo es inamovible
         this.body.immovable = true;
+        //que la pala no sobrepase los limites
+        this.body.setCollideWorldBounds(true);
     }
 }
 

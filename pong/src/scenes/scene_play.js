@@ -49,6 +49,23 @@ class Scene_play extends Phaser.Scene{
         if(this.ball.x <0 || this.ball.x > this.sys.game.config.width ){
             this.ball.setPosition(this.sys.game.config.width/2,this.sys.game.config.height/2);
         }
+
+        //control de la palas
+        if(this.cursor.down.isDown){
+            this.derecha.body.setVelocityY(300);
+        }else if(this.cursor.up.isDown){
+            this.derecha.body.setVelocityY(-300);    
+        }else{
+            this.derecha.body.setVelocityY(0);
+        }
+        //pala izquierda
+        if(this.cursor_S.isDown){
+            this.izquierda.body.setVelocityY(300);
+        }else if(this.cursor_W.isDown){
+            this.izquierda.body.setVelocityY(-300);
+        }else{
+            this.izquierda.body.setVelocityY(0);
+        }
     }
     chocaPala(){
         //da un aleatorio en y 
