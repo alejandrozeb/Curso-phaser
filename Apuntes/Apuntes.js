@@ -83,4 +83,5 @@ podemos cargar la animacionn por medio de atlas
 en evil_tomate.json
 internanmaente va cortando la slider y asigna un numero y su extension
 
+atlas
     */
