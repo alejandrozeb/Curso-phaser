@@ -76,4 +76,11 @@ que pueden tener una animacion de caminata, quietp y abajo
 como entiende phaser esto
 por dentrose le indica de que punto a que punto es la animacion de caminar y la otra de estar quieto
 eso es un atlas
+
+start end
+
+podemos cargar la animacionn por medio de atlas
+en evil_tomate.json
+internanmaente va cortando la slider y asigna un numero y su extension
+
     */
