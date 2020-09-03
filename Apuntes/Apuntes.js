@@ -84,4 +84,11 @@ en evil_tomate.json
 internanmaente va cortando la slider y asigna un numero y su extension
 
 atlas
+crearemos los atlas a partir de la herramietna atlas
+https://gammafp.com/tools/
+y las animaiones
+https://gammafp.com/tools/
+
+en el atlas cargamos imagenges separadas y las convierte en atkas y las animaciones a parti de ese nombre podemos crear la animacion que necesitemos
+
     */
