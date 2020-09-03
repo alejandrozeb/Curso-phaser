@@ -102,4 +102,9 @@ Get-ExecutionPolicy
 podemos ver la configuracion
 Set-ExecutionPolicy unrestricted
 cambiamos pero estos se deben ejecutar con powershell como admministtrador.
+
+ejecutamos pg--new prueba
+
+para crear una escena
+pg --scene Cobaya       //el nombre de la scena es cobaya
     */
