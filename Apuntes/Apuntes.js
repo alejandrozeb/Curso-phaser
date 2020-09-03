@@ -90,5 +90,16 @@ y las animaiones
 https://gammafp.com/tools/
 
 en el atlas cargamos imagenges separadas y las convierte en atkas y las animaciones a parti de ese nombre podemos crear la animacion que necesitemos
+//////////////////phaser CLI
 
+para evitar crear la estructura basica usaremos una herramienta que nos permita realizar esta tarea.
+
+npm install -g phaser3-cli-gamma
+pg --version
+
+para instalar en windows 
+Get-ExecutionPolicy
+podemos ver la configuracion
+Set-ExecutionPolicy unrestricted
+cambiamos pero estos se deben ejecutar con powershell como admministtrador.
     */
