@@ -21,7 +21,8 @@ class Bootloader extends Phaser.Scene {
 
         this.load.on('complete', () => {
             //console.log('Load complete');
-            this.scene.start("Menu");
+            //this.scene.start("Menu");
+            this.scene.start("Juego");
             
         });
        

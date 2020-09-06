@@ -17,6 +17,7 @@ class Menu extends Phaser.Scene {
       .on('pointerdown', () => {
         this.scene.start("Juego");
         console.log('asdasd');
+        
       });
 
     }
