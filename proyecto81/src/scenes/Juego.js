@@ -9,11 +9,11 @@ class Juego extends Phaser.Scene {
     }
 
     create() {
-
+        this.fondo=this.add.tileSprite(0,400,this.scale.width*2,this.scale.height*2, 'fondoNoche3');
     }
 
     update(time, delta) {
-
+        this.fondo.tilePositionX +=1;
     }
 }
 
