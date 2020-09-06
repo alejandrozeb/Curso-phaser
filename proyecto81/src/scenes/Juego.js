@@ -18,6 +18,7 @@ class Juego extends Phaser.Scene {
         this.ladrillos = this.physics.add.staticGroup();
         this.creaLadrillos(0,9);
         //
+        this.physics.add.collider(this.personaje, this.ladrillos);
         //controles
         this.cursor = this.input.keyboard.createCursorKeys();
         this.cursor_A = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
@@ -36,20 +37,20 @@ class Juego extends Phaser.Scene {
         }else{
             this.personaje.body.setVelocityX(0);
         }
-        //pala izquierda
+        //
         if(this.cursor_D.isDown){
             this.personaje.body.setVelocityX(300);
         }else if(this.cursor_A.isDown){
-            this.personaje.body.setVelocityX(-300);
+            this.personaje.body.setVelocityX(-300)
         }else{
             this.personaje.body.setVelocityX(0);
         }
         //salto
         if(
-            this.cursor_W.isDown && this.personaje.body.touching.down
+            this.cursor_W.isDown && this.personaje.body.blocked.down
         ){
-            this.personaje.body.setVelocityY(-300);
-            console.log('entra');
+            
+            this.personaje.body.setVelocityY(-330);
         }
     }
     //crea ladrillos c es la distancia,l es el numero de ladrillos
