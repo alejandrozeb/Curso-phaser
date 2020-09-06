@@ -9,6 +9,9 @@ class Obstaculo extends Phaser.GameObjects.Sprite {
         this.body.immovable = true;
         //que la pala no sobrepase los limites
         this.body.setCollideWorldBounds(true);
+        this.setOrigin(0,0);
+        this.setScale(0.4);
+        this.body.bounce.set(0.1);
     }
 }
 

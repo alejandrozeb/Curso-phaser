@@ -1,4 +1,5 @@
 import Angel from '../gameObjects/angel.js';
+import Obstaculo from '../gameObjects/obstaculos.js';
 class Juego extends Phaser.Scene {
     constructor() {
         super({key: 'Juego'});
@@ -13,6 +14,9 @@ class Juego extends Phaser.Scene {
         this.fondo=this.add.tileSprite(0,400,this.scale.width*2,this.scale.height*2, 'fondoNoche3');
         //personaje
         this.personaje = new Angel(this,300,100,"angel");
+        //ladrillos
+        this.ladrillos = this.physics.add.staticGroup();
+        this.creaLadrillos(0,9);
         //
         //controles
         this.cursor = this.input.keyboard.createCursorKeys();
@@ -46,6 +50,13 @@ class Juego extends Phaser.Scene {
         ){
             this.personaje.body.setVelocityY(-300);
             console.log('entra');
+        }
+    }
+    //crea ladrillos c es la distancia,l es el numero de ladrillos
+    creaLadrillos(c,l){
+        for(let i=0; i<=l;i++){    
+            this.ladrillos = new Obstaculo(this,c,700,"ladrillo");    
+            c=c+130;
         }
     }
 }
