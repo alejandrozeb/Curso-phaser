@@ -50,7 +50,7 @@ class Juego extends Phaser.Scene {
             this.cursor_W.isDown && this.personaje.body.blocked.down
         ){
             
-            this.personaje.body.setVelocityY(-330);
+            this.personaje.body.setVelocityY(-500);
         }
     }
     //crea ladrillos c es la distancia,l es el numero de ladrillos
