@@ -26,9 +26,8 @@ class Juego extends Phaser.Scene {
         this.cursor_W = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
         console.log(this.cursor.keyboard)
         //timer
-        console.log(this.scene.scene.time.addEvent({delay:2000,callback: this.creartimer, loop: true}));
+        console.log(this.scene.scene.time.addEvent({delay:3000,callback: () => {this.creaLadrillos(1170,Math.floor(Math.random()*300)+200,1);},loop: true,}));
     }
-
     update(time, delta) {
         this.fondo.tilePositionX +=1;
         //controles
@@ -70,13 +69,6 @@ class Juego extends Phaser.Scene {
                     console.log('afuera');
                     this.creaLadrillos(1170,700,9);
                 }
-    }
-    creartimer(){
-        console.log('timer');
-    }
-    //crea un ladrillo aleatorio
-    crearLadrilloAle(){
-
     }
 }
 
