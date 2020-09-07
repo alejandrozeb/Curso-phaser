@@ -16,7 +16,7 @@ class Juego extends Phaser.Scene {
         this.personaje = new Angel(this,300,100,"angel");
         //ladrillos
         this.ladrillos = this.physics.add.staticGroup();
-        this.creaLadrillos(0,9);
+        this.creaLadrillos(0,700,9);
         //
         this.physics.add.collider(this.personaje, this.ladrillos);
         //controles
@@ -26,7 +26,7 @@ class Juego extends Phaser.Scene {
         this.cursor_W = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
         console.log(this.cursor.keyboard)
         //timer
-        /* this.timer= this.time.events.loop(1500,this.creaLadrillos,this); */
+        console.log(this.scene.scene.time.addEvent({delay:2000,callback: this.creartimer, loop: true}));
     }
 
     update(time, delta) {
@@ -58,43 +58,25 @@ class Juego extends Phaser.Scene {
         //recicla ladrillos
         this.reciclaLadrillos(100,100);
     }
-    //crea ladrillos c es la distancia,l es el numero de ladrillos
-    creaLadrillos(c,l){
+    //crea ladrillos x es la posicion,y es la posicion en y,l es el numero de ladrillos
+    creaLadrillos(x,y,l){
         for(let i=0; i<=l;i++){    
-            this.ladrillos = new Obstaculo(this,c,700,"ladrillo");    
-            c=c+130;
+            this.ladrillos = new Obstaculo(this,x,y,"ladrillo");    
+            x=x+130;
         }
     }
     reciclaLadrillos(x,y){
-       // console.log(this.physics.world.bounds.left)
-
-
-            //console.log(this.ladrillos.body.position.x);d
                 if(this.ladrillos.body.position.x < 1170){
                     console.log('afuera');
-                    this.creaLadrillos(1170,9);
-
-                }else{
-                    console.log('adentro');
+                    this.creaLadrillos(1170,700,9);
                 }
-            
-        
-            /* if(this.ladrillos < this.physics.world.bounds.left){
-                return console.log(true) 
-            }else{
-                return console.log(false);
-            } */
-        
+    }
+    creartimer(){
+        console.log('timer');
+    }
+    //crea un ladrillo aleatorio
+    crearLadrilloAle(){
 
-/*         if (bomb < this.scene.physics.world.bounds.left) {
-            bomb.destroy()
-           } */
-       /*  this.ladrillo = this.ladrillos.getFirstDead();
-
-        this.ladrillo.reset(x,y);
-        this.ladrillo.body.setVelocityX= -180;
-        this.ladrillo.checkWorldBounds = true;
-        this.ladrillo.outOfBoundsKill = true; */
     }
 }
 
