@@ -1,0 +1,22 @@
+class Covidxe extends Phaser.GameObjects.Sprite {
+    constructor(scene,x,y,type){
+        super(scene,x,y,type);
+        //cuando entre aqui se creara la escena
+        scene.add.existing(this);
+        //cambiando de lado
+        this.flipX=true;
+        //agregando fisica a las palas
+        scene.physics.world.enable(this);
+        //que la pala no sobrepase los limites
+        this.body.setCollideWorldBounds(true);
+        //
+        //
+        this.setOrigin(0.5,0.5);
+        this.setScale(0.4);
+        //this.body.setSize(50,100,0,0).setOffset(25,0);
+        this.body.setSize(500,900).setOffset(0,0);
+        this.body.bounce.set(0.4);
+    }
+}
+
+export default Covidxe;
