@@ -1,5 +1,6 @@
 import Angel from '../gameObjects/angel.js';
 import Obstaculo from '../gameObjects/obstaculos.js';
+import Ladrillo from '../gameObjects/ladrillo.js';
 class Juego extends Phaser.Scene {
     constructor() {
         super({key: 'Juego'});
@@ -25,8 +26,11 @@ class Juego extends Phaser.Scene {
         this.cursor_D = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
         this.cursor_W = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
         console.log(this.cursor.keyboard)
-        //timer
-        console.log(this.scene.scene.time.addEvent({delay:3000,callback: () => {this.creaLadrillos(1170,Math.floor(Math.random()*300)+200,1);},loop: true,}));
+        //timer Math.floor(Math.random()*300)+200,1
+        console.log(this.scene.scene.time.addEvent({delay:3000,callback: () => {
+            this.ladrillo =  new Ladrillo(this,1170,500,"ladrillo");
+            this.physics.add.collider(this.personaje, this.ladrillo);
+        },loop: true,}));
     }
     update(time, delta) {
         this.fondo.tilePositionX +=1;
