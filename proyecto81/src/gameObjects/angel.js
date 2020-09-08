@@ -11,6 +11,8 @@ class Angel extends Phaser.GameObjects.Sprite {
         //
         this.setOrigin(0.5,0.5);
         this.setScale(0.4);
+        //this.body.setSize(50,100,0,0).setOffset(25,0);
+        this.body.setSize(500,900).setOffset(0,0);
         this.body.bounce.set(0.4);
     }
 }
