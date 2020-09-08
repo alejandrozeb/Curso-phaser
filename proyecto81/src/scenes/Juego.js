@@ -26,9 +26,9 @@ class Juego extends Phaser.Scene {
         this.cursor_D = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
         this.cursor_W = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
         console.log(this.cursor.keyboard)
-        //timer Math.floor(Math.random()*300)+200)
-        console.log(this.scene.scene.time.addEvent({delay:10000,callback: () => {
-            this.ladrillo =  new Ladrillo(this,1170,Math.floor(Math.random()*100)+400,"ladrillo");
+        //timer Math.floor(Math.random()*80)+420)  420
+        console.log(this.scene.scene.time.addEvent({delay:11000,callback: () => {
+            this.ladrillo =  new Ladrillo(this,1170,Math.floor(Math.random()*80)+420,"ladrillo");
             this.physics.add.collider(this.personaje, this.ladrillo);
         },loop: true,}));
     }
