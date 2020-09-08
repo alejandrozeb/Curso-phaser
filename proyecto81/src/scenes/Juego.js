@@ -25,12 +25,11 @@ class Juego extends Phaser.Scene {
         this.cursor_A = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
         this.cursor_D = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
         this.cursor_W = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
-        console.log(this.cursor.keyboard)
         //timer Math.floor(Math.random()*80)+420)  420
-        console.log(this.scene.scene.time.addEvent({delay:11000,callback: () => {
+        this.scene.scene.time.addEvent({delay:11000,callback: () => {
             this.ladrillo =  new Ladrillo(this,1170,Math.floor(Math.random()*80)+420,"ladrillo");
             this.physics.add.collider(this.personaje, this.ladrillo);
-        },loop: true,}));
+        },loop: true,});
     }
     update(time, delta) {
         this.fondo.tilePositionX +=1;
@@ -54,10 +53,10 @@ class Juego extends Phaser.Scene {
         if(
             this.cursor_W.isDown && this.personaje.body.blocked.down
         ){
-            
             this.personaje.body.setVelocityY(-500);
+        }else if(this.cursor_W.isDown && this.personaje.body.touching.down){
+            this.personaje.body.setVelocityY(-350);
         }
-
         //recicla ladrillos
         this.reciclaLadrillos(100,100);
     }
@@ -68,9 +67,10 @@ class Juego extends Phaser.Scene {
             x=x+130;
         }
     }
+    //crea ladrillos y los elimina
     reciclaLadrillos(x,y){
                 if(this.ladrillos.body.position.x < 1170){
-                    console.log('afuera');
+                    this.ladrillos.destroy();
                     this.creaLadrillos(1170,700,9);
                 }
     }

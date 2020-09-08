@@ -4,11 +4,7 @@ class Ladrillo extends Phaser.GameObjects.Sprite {
         //cuando entre aqui se creara la escena
         scene.add.existing(this);
         this.setScale(0.6);  
-        //this.setSize();
-        console.log(this.width,this.height);
         this.setSize(this.width/2,this.height/2);
-        console.log(this.width,this.height);
-        
         //agregando fisica a las palas
         scene.physics.world.enable(this);
         //especificar que este cuerpo es inamovible
@@ -21,8 +17,6 @@ class Ladrillo extends Phaser.GameObjects.Sprite {
         //cambia tamaño
         this.body.setSize(150,-100).setOffset(-50,100);
         this.body.bounce.set(0,1);
-
-        console.log(this.body);
     }
 }
 
