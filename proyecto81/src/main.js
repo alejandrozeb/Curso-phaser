@@ -1,4 +1,4 @@
-import Game_over from './scenes/Game_over.js';
+import Gameover from './scenes/Gameover.js';
 import Juego from './scenes/Juego.js';
 import Menu from './scenes/Menu.js';
 import Bootloader from './Bootloader.js';
@@ -24,7 +24,7 @@ const config = {
             }
         }
     },
-    scene: [Bootloader, Menu, Juego, Game_over]
+    scene: [Bootloader, Menu, Juego, Gameover]
 };
 
 new Phaser.Game(config);

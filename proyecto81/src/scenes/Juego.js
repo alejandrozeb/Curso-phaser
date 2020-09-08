@@ -59,6 +59,11 @@ class Juego extends Phaser.Scene {
         }
         //recicla ladrillos
         this.reciclaLadrillos(100,100);
+        //personaje sale del juego
+        if(this.personaje.body.position.x<-250){
+            //escena gameover
+            this.scene.start("Gameover");
+        }
     }
     //crea ladrillos x es la posicion,y es la posicion en y,l es el numero de ladrillos
     creaLadrillos(x,y,l){
