@@ -21,13 +21,13 @@ class Menu extends Phaser.Scene {
 
 
       this.golem = this.add.sprite(100,100,'covidxe');
-      //cargamos desd cache
-       this.dataAnim = this.cache.json.get('covidxe_anim');
-      //cargamos la animacoin
-      //console.log(this.dataAnim);
-      //console.log(this.anims.fromJSON());
-      this.anims.fromJSON(this.dataAnim);
+            this.dataAnim = this.cache.json.get('covidxe_anim');
+          
+      console.log(this.anims.fromJSON(this.dataAnim));
+     
       this.golem.anims.play('walking');
+
+      //this.load.spritesheet('evil_tomato', './assets/evil_tomato.png',{frameWidth: 16, frameHeight: 25});
 
     }
 

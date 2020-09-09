@@ -17,18 +17,12 @@ class Juego extends Phaser.Scene {
         //personaje
         this.personaje = new Angel(this,300,100,"angel");
         //enemigo
-        //animacion
-
-       
-
-
         this.enemigo = new Covidxes(this,1000,100,"covidxe");
         //ladrillos
         this.ladrillos = this.physics.add.staticGroup();
         this.creaLadrillos(0,700,9);
         //colisiones
         this.physics.add.collider(this.personaje, this.ladrillos,null,this);
-        this.physics.add.collider(this.ladrillos, this.enemigo,this.personaje,null,this);
         this.physics.add.collider(this.enemigo, this.personaje);
         //controles
         this.cursor = this.input.keyboard.createCursorKeys();
