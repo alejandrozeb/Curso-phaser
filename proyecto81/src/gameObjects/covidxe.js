@@ -3,7 +3,6 @@ class Covidxe extends Phaser.GameObjects.Sprite {
         super(scene,x,y,type);
         //cuando entre aqui se creara la escena
         scene.add.existing(this);
-        scene.physics.add.sprite(100,100,'covidxe');
         this.dataAnim = scene.cache.json.get('covidxe_anim');
           
         console.log(scene.anims.fromJSON(this.dataAnim));

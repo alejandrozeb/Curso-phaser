@@ -12,12 +12,13 @@ class Juego extends Phaser.Scene {
     }
 
     create() {
+        //vida
         //fondo
         this.fondo=this.add.tileSprite(0,400,this.scale.width*2,this.scale.height*2, 'fondoNoche3');
         //personaje
         this.personaje = new Angel(this,300,100,"angel");
         //enemigo
-        this.enemigo = new Covidxes(this,1000,100,"covidxe");
+        this.enemigo = new Covidxes(this,1400,100,"covidxe");
         //ladrillos
         this.ladrillos = this.physics.add.staticGroup();
         this.creaLadrillos(0,700,9);
@@ -33,6 +34,12 @@ class Juego extends Phaser.Scene {
         this.scene.scene.time.addEvent({delay:11000,callback: () => {
             this.ladrillo =  new Ladrillo(this,1170,Math.floor(Math.random()*80)+420,"ladrillo");
             this.physics.add.collider(this.personaje, this.ladrillo);
+            this.physics.add.collider(this.personaje, this.enemigo);
+        },loop: true,});
+        // timer enemigo
+        this.scene.scene.time.addEvent({delay:14000,callback: () => {
+            this.enemigo = new Covidxes(this,1400,100,"covidxe");
+            this.physics.add.collider(this.enemigo, this.personaje);
         },loop: true,});
     }
     update(time, delta) {
@@ -63,12 +70,16 @@ class Juego extends Phaser.Scene {
         }
         //recicla ladrillos
         this.reciclaLadrillos(100,100);
+        //personaje
         //personaje sale del juego
         if(this.personaje.body.position.x<-250){
             //escena gameover
-            this.personaje.body.reset(100,100);
-            //this.scene.start("Gameover");
+            //this.personaje.body.reset(100,100);
+            this.scene.start("Gameover");
         }
+        //enemigo
+        
+        //si se destruye uno 
     }
     //crea ladrillos x es la posicion,y es la posicion en y,l es el numero de ladrillos
     creaLadrillos(x,y,l){
