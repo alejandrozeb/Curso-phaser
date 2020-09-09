@@ -1,6 +1,7 @@
 import Angel from '../gameObjects/angel.js';
 import Obstaculo from '../gameObjects/obstaculos.js';
 import Ladrillo from '../gameObjects/ladrillo.js';
+import Covidxes from '../gameObjects/covidxe.js';
 class Juego extends Phaser.Scene {
     constructor() {
         super({key: 'Juego'});
@@ -15,11 +16,20 @@ class Juego extends Phaser.Scene {
         this.fondo=this.add.tileSprite(0,400,this.scale.width*2,this.scale.height*2, 'fondoNoche3');
         //personaje
         this.personaje = new Angel(this,300,100,"angel");
+        //enemigo
+        //animacion
+
+       
+
+
+        this.enemigo = new Covidxes(this,1000,100,"covidxe");
         //ladrillos
         this.ladrillos = this.physics.add.staticGroup();
         this.creaLadrillos(0,700,9);
-        //
-        this.physics.add.collider(this.personaje, this.ladrillos);
+        //colisiones
+        this.physics.add.collider(this.personaje, this.ladrillos,null,this);
+        this.physics.add.collider(this.ladrillos, this.enemigo,this.personaje,null,this);
+        this.physics.add.collider(this.enemigo, this.personaje);
         //controles
         this.cursor = this.input.keyboard.createCursorKeys();
         this.cursor_A = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
@@ -55,14 +65,15 @@ class Juego extends Phaser.Scene {
         ){
             this.personaje.body.setVelocityY(-500);
         }else if(this.cursor_W.isDown && this.personaje.body.touching.down){
-            this.personaje.body.setVelocityY(-350);
+            this.personaje.body.setVelocityY(-400);
         }
         //recicla ladrillos
         this.reciclaLadrillos(100,100);
         //personaje sale del juego
         if(this.personaje.body.position.x<-250){
             //escena gameover
-            this.scene.start("Gameover");
+            this.personaje.body.reset(100,100);
+            //this.scene.start("Gameover");
         }
     }
     //crea ladrillos x es la posicion,y es la posicion en y,l es el numero de ladrillos
@@ -70,6 +81,7 @@ class Juego extends Phaser.Scene {
         for(let i=0; i<=l;i++){    
             this.ladrillos = new Obstaculo(this,x,y,"ladrillo");    
             x=x+130;
+            
         }
     }
     //crea ladrillos y los elimina

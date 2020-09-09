@@ -1,0 +1,84 @@
+{
+    "anims": [
+        {
+            "key": "walking",
+            "type": "frames",
+            "repeat": -1,
+            "frameRate": 12,
+            "frames": [
+                {
+                    "key": "covidxe",
+                    "frame": "golem_02_walking_000"
+                },
+                {
+                    "key": "covidxe",
+                    "frame": "golem_02_walking_001"
+                },
+                {
+                    "key": "covidxe",
+                    "frame": "golem_02_walking_002"
+                },
+                {
+                    "key": "covidxe",
+                    "frame": "golem_02_walking_003"
+                },
+                {
+                    "key": "covidxe",
+                    "frame": "golem_02_walking_004"
+                },
+                {
+                    "key": "covidxe",
+                    "frame": "golem_02_walking_005"
+                },
+                {
+                    "key": "covidxe",
+                    "frame": "golem_02_walking_006"
+                },
+                {
+                    "key": "covidxe",
+                    "frame": "golem_02_walking_007"
+                },
+                {
+                    "key": "covidxe",
+                    "frame": "golem_02_walking_008"
+                },
+                {
+                    "key": "covidxe",
+                    "frame": "golem_02_walking_009"
+                },
+                {
+                    "key": "covidxe",
+                    "frame": "golem_02_walking_010"
+                },
+                {
+                    "key": "covidxe",
+                    "frame": "golem_02_walking_011"
+                },
+                {
+                    "key": "covidxe",
+                    "frame": "golem_02_walking_012"
+                },
+                {
+                    "key": "covidxe",
+                    "frame": "golem_02_walking_013"
+                },
+                {
+                    "key": "covidxe",
+                    "frame": "golem_02_walking_014"
+                },
+                {
+                    "key": "covidxe",
+                    "frame": "golem_02_walking_015"
+                },
+                {
+                    "key": "covidxe",
+                    "frame": "golem_02_walking_016"
+                },
+                {
+                    "key": "covidxe",
+                    "frame": "golem_02_walking_017"
+                }
+            ]
+        }
+    ]
+}

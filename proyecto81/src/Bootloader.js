@@ -16,6 +16,16 @@ class Bootloader extends Phaser.Scene {
         this.load.image('covidxe', 'personajes/covidxe.png');
         this.load.image('ladrillo', 'obstaculo/ladrillo.png');
 
+        //animacion
+        //cargando un json
+        this.load.json('covidxe_anim','personajes/anim_ene/covidxe_anim.json');
+        this.load.atlas('covidxe', 'personajes/anim_ene/covidxe.png','personajes/anim_ene/covidxe_atlas.json');
+        
+
+       
+        
+
+
 
 
 
