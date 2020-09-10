@@ -15,7 +15,7 @@ class Ladrillo extends Phaser.GameObjects.Sprite {
         this.body.setAllowGravity(false);
         this.body.setVelocityX(-100);
         //cambia tamaño
-        this.body.setSize(150,-100).setOffset(-50,100);
+        this.body.setSize(350,100).setOffset(-100,100);
         this.body.bounce.set(0,1);
     }
 }

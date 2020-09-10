@@ -74,8 +74,8 @@ class Juego extends Phaser.Scene {
         //personaje sale del juego
         if(this.personaje.body.position.x<-250){
             //escena gameover
-            //this.personaje.body.reset(100,100);
-            this.scene.start("Gameover");
+            this.personaje.body.reset(100,100);
+           //this.scene.start("Gameover");
         }
         //enemigo
         
