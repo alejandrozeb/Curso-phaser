@@ -21,6 +21,9 @@ class Bootloader extends Phaser.Scene {
         this.load.json('covidxe_anim','personajes/anim_ene/covidxe_anim.json');
         this.load.atlas('covidxe', 'personajes/anim_ene/covidxe.png','personajes/anim_ene/covidxe_atlas.json');
         
+        //medico
+        this.load.json('medico_anim','personajes/anim_medi/medico_anim.json');
+        this.load.atlas('medico', 'personajes/anim_medi/medico.png','personajes/anim_medi/medico_atlas.json');
 
        
         
@@ -33,8 +36,8 @@ class Bootloader extends Phaser.Scene {
 
         this.load.on('complete', () => {
             //console.log('Load complete');
-            //this.scene.start("Menu");
-            this.scene.start("Juego");
+            this.scene.start("Menu");
+            //this.scene.start("Juego");
             
         });
        

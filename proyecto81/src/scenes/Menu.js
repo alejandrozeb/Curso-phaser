@@ -27,6 +27,16 @@ class Menu extends Phaser.Scene {
      
       this.golem.anims.play('walking');
 
+
+
+      this.medico = this.add.sprite(1000,400,'medico').setScale(0.5);
+      //cargamos desd cache
+      this.dataAnim2= this.cache.json.get('medico_anim');
+      console.log(this.dataAnim2);
+      //cargamos la animacoin
+      this.anims.fromJSON(this.dataAnim2);
+      this.medico.anims.play('walk');
+
       
 
     }
