@@ -8,7 +8,7 @@ class Angel extends Phaser.GameObjects.Sprite {
         console.log(this.dataAnim3);
         //cargamos la animacoin
         scene.anims.fromJSON(this.dataAnim3);
-        this.anims.play('down');
+        //this.anims.play('down');
         //agregando fisica a las palas
         scene.physics.world.enable(this);
         //que la pala no sobrepase los limites

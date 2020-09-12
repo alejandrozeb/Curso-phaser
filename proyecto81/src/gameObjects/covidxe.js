@@ -5,7 +5,7 @@ class Covidxe extends Phaser.GameObjects.Sprite {
         scene.add.existing(this);
         this.dataAnim = scene.cache.json.get('covidxe_anim');
           
-        console.log(scene.anims.fromJSON(this.dataAnim));
+        scene.anims.fromJSON(this.dataAnim);
      
         this.anims.play('walking');
         //agregando fisica a las palas

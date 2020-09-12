@@ -48,37 +48,31 @@ class Juego extends Phaser.Scene {
     update(time, delta) {
         this.fondo.tilePositionX +=1;
         //controles
-        if(this.cursor.down.isDown){
-            this.personaje.body.setVelocityX(300);
-        }else if(this.cursor.up.isDown){
-            this.personaje.body.setVelocityX(-300);    
-        }else{
-            this.personaje.body.setVelocityX(0);
-            //this.personaje.anims.play('walk');
-        }
         //
         if(this.cursor_D.isDown){
             this.personaje.body.setVelocityX(300);
-            this.personaje.anims.play('walk');
+            this.personajeAnim('walk');
         }else if(this.cursor_A.isDown){
             this.personaje.body.setVelocityX(-300);
-            this.personaje.anims.play('walk');
+            this.personajeAnim('walk');
         }else{
             this.personaje.body.setVelocityX(0);
+            this.personajeAnim('idle');
         }
         //parado
-        console.log();
+        /* console.log();
         if(this.personaje.body.velocity.x===0){
-            console.log("parado");
-            this.personaje.anims.play('idle');
-        }
+            this.personajeAnim('idle');
+        } */
         //salto
         if(
             this.cursor_W.isDown && this.personaje.body.blocked.down
         ){
             this.personaje.body.setVelocityY(-500);
+            this.personajeAnim('jumploop');
         }else if(this.cursor_W.isDown && this.personaje.body.touching.down){
             this.personaje.body.setVelocityY(-400);
+            this.personajeAnim('jumpstartloop');
         }
         //recicla ladrillos
         this.reciclaLadrillos(100,100);
@@ -107,6 +101,11 @@ class Juego extends Phaser.Scene {
                     this.ladrillos.destroy();
                     this.creaLadrillos(1170,700,9);
                 }
+    }
+    //animacion
+    personajeAnim(accion){
+        this.personaje.anims.play(accion,true);
+        //this.personaje.anims.
     }
 }
 
