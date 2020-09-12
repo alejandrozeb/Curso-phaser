@@ -29,13 +29,15 @@ class Menu extends Phaser.Scene {
 
 
 
-      this.medico = this.add.sprite(1000,400,'medico').setScale(0.5);
+      
+      //medico
+      this.medico1 = this.add.sprite(100,400,'medico1').setScale(1);
       //cargamos desd cache
-      this.dataAnim2= this.cache.json.get('medico_anim');
-      console.log(this.dataAnim2);
+      this.dataAnim3= this.cache.json.get('medico1_anim');
+      console.log(this.dataAnim3);
       //cargamos la animacoin
-      this.anims.fromJSON(this.dataAnim2);
-      this.medico.anims.play('walk');
+      this.anims.fromJSON(this.dataAnim3);
+      this.medico1.anims.play('walk');
 
       
 
