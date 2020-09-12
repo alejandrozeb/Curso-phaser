@@ -69,19 +69,18 @@ class Juego extends Phaser.Scene {
             this.cursor_W.isDown && this.personaje.body.blocked.down
         ){
             this.personaje.body.setVelocityY(-500);
-            this.personajeAnim('jumploop');
+            this.personajeAnim('jumpstart');
         }else if(this.cursor_W.isDown && this.personaje.body.touching.down){
             this.personaje.body.setVelocityY(-400);
-            this.personajeAnim('jumpstartloop');
+            this.personajeAnim('jumploop');
         }
         //recicla ladrillos
         this.reciclaLadrillos(100,100);
-        //personaje
         //personaje sale del juego
         if(this.personaje.body.position.x<-250){
             //escena gameover
-            this.personaje.body.reset(100,100);
-           //this.scene.start("Gameover");
+            //this.personaje.body.reset(100,100);
+           this.scene.start("Gameover");
         }
         //enemigo
         

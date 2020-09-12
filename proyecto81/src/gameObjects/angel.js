@@ -5,7 +5,7 @@ class Angel extends Phaser.GameObjects.Sprite {
         scene.add.existing(this);
         //animacion
         this.dataAnim3= scene.cache.json.get('medico1_anim');
-        console.log(this.dataAnim3);
+       
         //cargamos la animacoin
         scene.anims.fromJSON(this.dataAnim3);
         //this.anims.play('down');

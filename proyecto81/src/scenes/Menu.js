@@ -23,7 +23,7 @@ class Menu extends Phaser.Scene {
       this.golem = this.add.sprite(this.scale.width/2,550,'covidxe');
       this.dataAnim = this.cache.json.get('covidxe_anim');
           
-      console.log(this.anims.fromJSON(this.dataAnim));
+      this.anims.fromJSON(this.dataAnim);
      
       this.golem.anims.play('walking');
 
@@ -34,7 +34,7 @@ class Menu extends Phaser.Scene {
       this.medico1 = this.add.sprite(100,400,'medico1').setScale(1);
       //cargamos desd cache
       this.dataAnim3= this.cache.json.get('medico1_anim');
-      console.log(this.dataAnim3);
+      this.dataAnim3;
       //cargamos la animacoin
       this.anims.fromJSON(this.dataAnim3);
       this.medico1.anims.play('walk');
