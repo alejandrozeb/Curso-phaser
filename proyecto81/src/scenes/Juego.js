@@ -13,6 +13,9 @@ class Juego extends Phaser.Scene {
 
     create() {
         //vida
+
+        //saltos sobre el enemigo
+        this.saltoEne=0;
         //fondo
         this.fondo=this.add.tileSprite(0,400,this.scale.width*2,this.scale.height*2, 'fondoNoche3');
         //personaje
@@ -79,19 +82,31 @@ class Juego extends Phaser.Scene {
         //personaje sale del juego
         if(this.personaje.body.position.x<-250){
             //escena gameover
-            //this.personaje.body.reset(100,100);
-           this.scene.start("Gameover");
+        this.personaje.body.reset(100,100);
+           //this.scene.start("Gameover");
         }
-        //enemigo
-        
-        //si se destruye uno 
+
+        //enemigo acciones
+        if(this.enemigo.body.touching.left === true){
+           //console.log(this.enemigo.body.touching);
+            this.personajeDie();
+            //this.scene.start("Gameover");
+        }else if(this.enemigo.body.touching.right === true){
+            this.personajeDie();
+            //this.scene.start("Gameover");
+        }else if(this.enemigo.body.touching.up === true){
+                this.saltoEne++;
+                if(this.saltoEne>1){
+                    this.personajeDie();
+                    //this.scene.start("Gameover");
+                }
+        }
     }
     //crea ladrillos x es la posicion,y es la posicion en y,l es el numero de ladrillos
     creaLadrillos(x,y,l){
         for(let i=0; i<=l;i++){    
             this.ladrillos = new Obstaculo(this,x,y,"ladrillo");    
-            x=x+130;
-            
+            x=x+130;     
         }
     }
     //crea ladrillos y los elimina
@@ -105,6 +120,10 @@ class Juego extends Phaser.Scene {
     personajeAnim(accion){
         this.personaje.anims.play(accion,true);
         //this.personaje.anims.
+    }
+    //muere personaje
+    personajeDie(){
+        this.personaje.anims.play('dying',true);
     }
 }
 
