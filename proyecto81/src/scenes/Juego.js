@@ -16,7 +16,7 @@ class Juego extends Phaser.Scene {
         //fondo
         this.fondo=this.add.tileSprite(0,400,this.scale.width*2,this.scale.height*2, 'fondoNoche3');
         //personaje
-        this.personaje = new Angel(this,300,100,"angel");
+        this.personaje = new Angel(this,300,100,"medico1");
         //enemigo
         this.enemigo = new Covidxes(this,1400,100,"covidxe");
         //ladrillos
@@ -51,6 +51,7 @@ class Juego extends Phaser.Scene {
             this.personaje.body.setVelocityX(-300);    
         }else{
             this.personaje.body.setVelocityX(0);
+            this.personaje.anims.play('walk');
         }
         //
         if(this.cursor_D.isDown){
