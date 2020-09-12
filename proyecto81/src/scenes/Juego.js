@@ -17,6 +17,9 @@ class Juego extends Phaser.Scene {
         this.fondo=this.add.tileSprite(0,400,this.scale.width*2,this.scale.height*2, 'fondoNoche3');
         //personaje
         this.personaje = new Angel(this,300,100,"medico1");
+        //anim  personaje en juego
+        this.dataAnim3= this.cache.json.get('medico1_anim');
+        this.anims.fromJSON(this.dataAnim3);
         //enemigo
         this.enemigo = new Covidxes(this,1400,100,"covidxe");
         //ladrillos
@@ -51,15 +54,23 @@ class Juego extends Phaser.Scene {
             this.personaje.body.setVelocityX(-300);    
         }else{
             this.personaje.body.setVelocityX(0);
-            this.personaje.anims.play('walk');
+            //this.personaje.anims.play('walk');
         }
         //
         if(this.cursor_D.isDown){
             this.personaje.body.setVelocityX(300);
+            this.personaje.anims.play('walk');
         }else if(this.cursor_A.isDown){
-            this.personaje.body.setVelocityX(-300)
+            this.personaje.body.setVelocityX(-300);
+            this.personaje.anims.play('walk');
         }else{
             this.personaje.body.setVelocityX(0);
+        }
+        //parado
+        console.log();
+        if(this.personaje.body.velocity.x===0){
+            console.log("parado");
+            this.personaje.anims.play('idle');
         }
         //salto
         if(
