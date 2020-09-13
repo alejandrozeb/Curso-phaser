@@ -12,8 +12,6 @@ class Juego extends Phaser.Scene {
     }
 
     create() {
-        //vida
-
         //saltos sobre el enemigo
         this.saltoEne=0;
         //fondo
@@ -46,6 +44,7 @@ class Juego extends Phaser.Scene {
         this.scene.scene.time.addEvent({delay:14000,callback: () => {
             this.enemigo = new Covidxes(this,1400,100,"covidxe");
             this.physics.add.collider(this.enemigo, this.personaje);
+            this.saltoEne=0;
         },loop: true,});
     }
     update(time, delta) {
@@ -63,10 +62,6 @@ class Juego extends Phaser.Scene {
             this.personajeAnim('idle');
         }
         //parado
-        /* console.log();
-        if(this.personaje.body.velocity.x===0){
-            this.personajeAnim('idle');
-        } */
         //salto
         if(
             this.cursor_W.isDown && this.personaje.body.blocked.down
@@ -82,23 +77,23 @@ class Juego extends Phaser.Scene {
         //personaje sale del juego
         if(this.personaje.body.position.x<-250){
             //escena gameover
-        this.personaje.body.reset(100,100);
-           //this.scene.start("Gameover");
+        //this.personaje.body.reset(100,100);
+          this.scene.start("Gameover");
         }
 
         //enemigo acciones
         if(this.enemigo.body.touching.left === true){
-           //console.log(this.enemigo.body.touching);
-            this.personajeDie();
-            //this.scene.start("Gameover");
+           this.personajeDie();
+           this.scene.start("Gameover");
+            
         }else if(this.enemigo.body.touching.right === true){
             this.personajeDie();
-            //this.scene.start("Gameover");
+            this.scene.start("Gameover");
         }else if(this.enemigo.body.touching.up === true){
                 this.saltoEne++;
                 if(this.saltoEne>1){
                     this.personajeDie();
-                    //this.scene.start("Gameover");
+                   this.scene.start("Gameover");
                 }
         }
     }
@@ -119,7 +114,6 @@ class Juego extends Phaser.Scene {
     //animacion
     personajeAnim(accion){
         this.personaje.anims.play(accion,true);
-        //this.personaje.anims.
     }
     //muere personaje
     personajeDie(){
@@ -128,3 +122,4 @@ class Juego extends Phaser.Scene {
 }
 
 export default Juego;
+//no va a tenr vida el personaje la dificulta no es muy alta para contar con vidas
