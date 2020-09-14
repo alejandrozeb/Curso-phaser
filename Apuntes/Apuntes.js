@@ -108,3 +108,4 @@ ejecutamos pg--new prueba
 para crear una escena
 pg --scene Cobaya       //el nombre de la scena es cobaya
     */
+   

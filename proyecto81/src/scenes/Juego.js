@@ -15,7 +15,7 @@ class Juego extends Phaser.Scene {
         //saltos sobre el enemigo
         this.saltoEne=0;
         //fondo
-        this.fondo=this.add.tileSprite(0,400,this.scale.width*2,this.scale.height*2, 'fondoNoche3');
+        this.fondo=this.add.tileSprite(0,400,this.scale.width*2,this.scale.height*2, 'fondoNoche4').setSize(2600,1000);
         //personaje
         this.personaje = new Angel(this,300,100,"medico1");
         //anim  personaje en juego
