@@ -21,6 +21,7 @@ class Juego extends Phaser.Scene {
         //anim  personaje en juego
         this.dataAnim3= this.cache.json.get('medico1_anim');
         this.anims.fromJSON(this.dataAnim3);
+        
         //enemigo
         this.enemigo = new Covidxes(this,1400,100,"covidxe");
         //ladrillos
@@ -46,6 +47,7 @@ class Juego extends Phaser.Scene {
             this.physics.add.collider(this.enemigo, this.personaje);
             this.saltoEne=0;
         },loop: true,});
+        
     }
     update(time, delta) {
         this.fondo.tilePositionX +=1;
@@ -80,7 +82,14 @@ class Juego extends Phaser.Scene {
         //this.personaje.body.reset(100,100);
           this.scene.start("Gameover");
         }
-
+        //caida
+        if(this.personaje.body.velocity.y>50){
+            this.personajeAnim('down');
+        }else{//salto
+            if(this.personaje.body.velocity.y<-100){
+                this.personajeAnim('jumploop');
+            }   
+        }
         //enemigo acciones
         if(this.enemigo.body.touching.left === true){
            this.personajeDie();
