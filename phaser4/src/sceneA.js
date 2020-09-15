@@ -3,9 +3,24 @@ class SceneA extends Phaser.Scene {
         super({key: "SceneA"}); //nombre de referencia
     }
     preload(){
-
+        this.load.path = './assets/';
+        this.load.image('fuente3','fuente3.png');
+        this.load.json('fuente3_json','fuente3.json');
     }
     create(){
+        //letras
+        //cargamos
+        let config = this.cache.json.get('fuente3_json');
+        //cargando a cache
+        this.cache.bitmapFont.add('fuente3',Phaser.GameObjects.RetroFont.Parse(this,config));
+        //usamos
+        this.texto = this.add.bitmapText(100,50,'fuente3','');
+
+
+
+
+
+
         //alert("se ha cargado la escena A");
         let graphics = this.add.graphics(); //habilitando graficas
 
@@ -18,7 +33,7 @@ class SceneA extends Phaser.Scene {
         //añadiendo texto
         this.add.text(120,110,"A",{font: "96px Courier", fill: "#000000"});
         //podemos acceder a una escena desde aqui con el manejador de escenas
-        this.scene.add("SceneC", new SceneC);
+       // this.scene.add("SceneC", new SceneC);
         //normalmente se carga una escena y la anterior se elimina
         //A encima de todo
        // this.scene.bringToTop("SceneA");
