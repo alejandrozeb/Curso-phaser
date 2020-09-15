@@ -5,7 +5,7 @@ class Bootloader extends Phaser.Scene {
     }
 
     preload() {
-        console.log('Bootloader');
+        //console.log('Bootloader');
         this.load.setPath('./assets/');
         //cargando imagenes
         this.load.image('fondoNoche4', 'background/background_3.png');

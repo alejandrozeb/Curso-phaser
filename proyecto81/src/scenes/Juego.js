@@ -8,7 +8,7 @@ class Juego extends Phaser.Scene {
     }
 
     init() {
-        console.log('Scene: Juego');
+        //console.log('Scene: Juego');
     }
 
     create() {

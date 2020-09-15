@@ -5,7 +5,7 @@ class Gameover extends Phaser.Scene {
     }
 
     init() {
-        console.log('Scene: Gameover');
+        //console.log('Scene: Gameover');
         this.cameras.main.setBackgroundColor('#FFFFF');
     }
 
