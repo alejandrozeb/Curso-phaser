@@ -10,6 +10,7 @@ class Bootloader extends Phaser.Scene {
         //cargando imagenes
         this.load.image('fondoNoche4', 'background/background_3.png');
         this.load.image('fondoFinal', 'background/background_5.png');
+        this.load.image('home', 'background/casa1.png');
         this.load.image('boton', 'background/Bonus_4_1.png');
         
         this.load.image('ladrillo', 'obstaculo/ladrillo.png');

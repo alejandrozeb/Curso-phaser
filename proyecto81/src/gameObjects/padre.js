@@ -7,8 +7,8 @@ class Padre extends Phaser.GameObjects.Sprite {
         //scene.physics.world.enable(this);
         //que la pala no sobrepase los limites
         //this.body.setCollideWorldBounds(true);
-
-        //this.setOrigin(0.5,0.5);
+        //this.flipX= true;
+        this.setOrigin(0.5,0.5);
         //this.setScale(0.4);
         //this.body.bounce.set(0.4);
     }

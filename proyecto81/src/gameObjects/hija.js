@@ -9,7 +9,7 @@ class Hija extends Phaser.GameObjects.Sprite {
         //this.body.setCollideWorldBounds(true);
 
         //this.setOrigin(0.5,0.5);
-        //this.setScale(0.4);
+        this.setScale(0.9);
         //this.body.bounce.set(0.4);
     }
 }

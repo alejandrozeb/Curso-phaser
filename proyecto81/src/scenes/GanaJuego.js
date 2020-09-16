@@ -11,10 +11,13 @@ class GanaJuego extends Phaser.Scene {
 
     create() {
         //background
-        this.add.tileSprite(800,450,this.scale.width*2,this.scale.height*2, 'fondoFinal');
+        this.fondo=this.add.tileSprite(800,450,this.scale.width*2,this.scale.height*2, 'fondoFinal');
+        this.fondo.flipX=false;
+        //home
+        this.add.image(260,610,'home').setScale(0.5);
         //personajes
-        this.personajePadre = new Padre(this,0,100,'padre');
-        this.personajeHija = new Hija(this,100,200,'hija');
+        this.personajePadre = new Padre(this,490,620,'padre');
+        this.personajeHija = new Hija(this,650,630,'hija');
         
     }
 
