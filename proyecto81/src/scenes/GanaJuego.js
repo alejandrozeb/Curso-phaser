@@ -18,6 +18,10 @@ class GanaJuego extends Phaser.Scene {
         //personajes
         this.personajePadre = new Padre(this,490,620,'padre');
         this.personajeHija = new Hija(this,650,630,'hija');
+        this.personajeMedico = this.add.image(1000,630,'medicoWalk').setScale(0.14);
+        this.personajeMedico.flipX=true;
+
+        //mensaje
         
     }
 
