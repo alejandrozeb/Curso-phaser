@@ -26,6 +26,17 @@ class Menu extends Phaser.Scene {
       this.anims.fromJSON(this.dataAnim);
      
       this.golem.anims.play('walking');
+      //medico
+      this.personajeMedico = this.add.image(100,550,'medicoWalk').setScale(0.2);
+      //letra
+
+        //mensaje
+        let graphics = this.add.graphics();
+        graphics.fillStyle(0xffffff,1);
+        graphics.fillRect(20,300,200,100);
+        this.add.text(20,300,"Debo llevar").setFontFamily("Arial").setFontSize(30).setOrigin(0,0).setColor('#000000');
+        this.add.text(20,330,"medicamentos").setFontFamily("Arial").setFontSize(30).setOrigin(0,0).setColor('#000000');
+        this.add.text(20,360,"a mis amigos").setFontFamily("Arial").setFontSize(30).setOrigin(0,0).setColor('#000000');
     }
 
     update(time, delta) {

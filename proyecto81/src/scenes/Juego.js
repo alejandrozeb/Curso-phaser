@@ -47,6 +47,11 @@ class Juego extends Phaser.Scene {
             this.physics.add.collider(this.enemigo, this.personaje);
             this.saltoEne=0;
         },loop: true,});
+
+        //timer escena de ganar
+        this.scene.scene.time.addEvent({delay:90000, callback: () => {
+            this.scene.start("GanaJuego");
+        },loop: false});
         
     }
     update(time, delta) {
