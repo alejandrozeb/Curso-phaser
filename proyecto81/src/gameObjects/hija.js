@@ -1,4 +1,4 @@
-class Padre extends Phaser.GameObjects.Sprite {
+class Hija extends Phaser.GameObjects.Sprite {
     constructor(scene,x,y,type){
         super(scene,x,y,type);
         //cuando entre aqui se creara la escena
@@ -14,4 +14,4 @@ class Padre extends Phaser.GameObjects.Sprite {
     }
 }
 
-export default Padre;
+export default Hija;
