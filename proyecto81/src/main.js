@@ -1,3 +1,4 @@
+import GanaJuego from './scenes/GanaJuego.js';
 import Gameover from './scenes/Gameover.js';
 import Juego from './scenes/Juego.js';
 import Menu from './scenes/Menu.js';
@@ -24,7 +25,7 @@ const config = {
             }
         }
     },
-    scene: [Bootloader, Menu, Juego, Gameover]
+    scene: [Bootloader, Menu, Juego, Gameover, GanaJuego]
 };
 
 new Phaser.Game(config);
