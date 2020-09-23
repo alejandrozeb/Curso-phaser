@@ -13,10 +13,12 @@ class Bootloader extends Phaser.Scene {
         this.load.image('home', 'background/casa1.png');
         this.load.image('boton', 'botonIni2.png');
         this.load.image('botonCre', 'botonCre.png');
+        this.load.image('botonVol', 'botonVolver.png');
         
         this.load.image('ladrillo', 'obstaculo/ladrillo.png');
         this.load.image('medicoWalk', 'personajes/medico_walk.png');  
         this.load.image('titulo', 'titulo.png');  
+        this.load.image('tituloCre', 'titulo2.png');  
 
         
 
@@ -35,9 +37,10 @@ class Bootloader extends Phaser.Scene {
 
         this.load.on('complete', () => {
         
-            this.scene.start("Menu");
+            //this.scene.start("Menu");
             //this.scene.start("Juego");
             //this.scene.start("GanaJuego");
+            this.scene.start("Creditos");
         });
        
         
