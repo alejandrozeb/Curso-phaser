@@ -1,3 +1,4 @@
+import Creditos from './scenes/Creditos.js';
 import GanaJuego from './scenes/GanaJuego.js';
 import Gameover from './scenes/Gameover.js';
 import Juego from './scenes/Juego.js';
@@ -25,7 +26,7 @@ const config = {
             }
         }
     },
-    scene: [Bootloader, Menu, Juego, Gameover, GanaJuego]
+    scene: [Bootloader, Menu, Juego, Gameover, GanaJuego, Creditos]
 };
 
 new Phaser.Game(config);

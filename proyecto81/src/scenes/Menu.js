@@ -9,13 +9,21 @@ class Menu extends Phaser.Scene {
     }
 
     create() {
-        this.textIniciar = this.add.text((this.scale.width/2), (this.scale.height/2)+80,'Iniciar').setFontFamily("Arial").setFontSize(70).setOrigin(0.5,0.5);
-    const clickBoton = this.add.image(this.scale.width/2,this.scale.height/2+200,"boton").setScale(0.7)
+    const clickBoton = this.add.image(this.scale.width/2,this.scale.height/2+100,"boton").setScale(0.22)
       .setInteractive()
       .on('pointerdown', () => {
         this.scene.start("Juego");
         
       });
+
+      const clickBoton2 = this.add.image(this.scale.width/2,this.scale.height/2+255,"botonCre").setScale(0.1)
+      .setInteractive()
+      .on('pointerdown', () => {
+        this.scene.start("Creditos");
+      });
+
+
+
       this.titulo = this.add.image(this.scale.width/2,this.scale.height-550,'titulo').setScale(0.5);
 
       //covidxe
