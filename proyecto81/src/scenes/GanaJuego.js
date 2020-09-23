@@ -28,6 +28,12 @@ class GanaJuego extends Phaser.Scene {
         this.add.text(570,450,"Gracias por").setFontFamily("Arial").setFontSize(30).setOrigin(0,0).setColor('#000000');
         this.add.text(560,480,"Salvarnos de").setFontFamily("Arial").setFontSize(30).setOrigin(0,0).setColor('#000000');
         this.add.text(570,510,"los covidxes").setFontFamily("Arial").setFontSize(30).setOrigin(0,0).setColor('#000000');
+
+        const clickBoton = this.add.image(this.scale.width-80,this.scale.height-20,"botonMenu").setScale(0.1)
+        .setInteractive()
+        .on('pointerdown', () => {
+        this.scene.start("Menu");
+      });
         
     }
 

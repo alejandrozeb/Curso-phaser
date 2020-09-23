@@ -14,6 +14,7 @@ class Bootloader extends Phaser.Scene {
         this.load.image('boton', 'botonIni3.png');
         this.load.image('botonCre', 'botonCre.png');
         this.load.image('botonVol', 'botonVolver.png');
+        this.load.image('botonMenu', 'botonMenu.png');
         
         this.load.image('ladrillo', 'obstaculo/ladrillo.png');
         this.load.image('medicoWalk', 'personajes/medico_walk.png');  
@@ -39,8 +40,9 @@ class Bootloader extends Phaser.Scene {
         
             //this.scene.start("Menu");
             //this.scene.start("Juego");
-            //this.scene.start("GanaJuego");
-            this.scene.start("Creditos");
+            this.scene.start("GanaJuego");
+            //this.scene.start("Creditos");
+            //this.scene.start("Gameover");
         });
        
         
